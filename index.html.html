@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dani Alif Riswanto — Community Moderator & Web3 Ambassador</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0d0d1a; color: #e2e8f0; line-height: 1.6; }
+
+    .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); padding: 4rem 2rem 3rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 60%); }
+    .avatar-wrap { width: 300px; height: 300px; border-radius: 50%; border: 3px solid rgba(99,102,241,0.7); overflow: hidden; margin: 0 auto 1.25rem; position: relative; z-index: 1; background: #312e81; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 500; color: #a5b4fc; }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero h1 { font-size: 30px; font-weight: 600; color: #fff; letter-spacing: 1.5px; position: relative; z-index: 1; margin-bottom: 6px; }
+    .title-badge { display: inline-block; background: rgba(99,102,241,0.25); border: 1px solid rgba(99,102,241,0.5); color: #a5b4fc; font-size: 12px; padding: 4px 16px; border-radius: 20px; margin-bottom: 1.5rem; position: relative; z-index: 1; letter-spacing: 1.5px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; position: relative; z-index: 1; }
+    .contact-pill { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); font-size: 12px; padding: 5px 14px; border-radius: 20px; text-decoration: none; transition: background 0.2s; }
+    .contact-pill:hover { background: rgba(255,255,255,0.14); }
+
+    .main { max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+    .section { margin-bottom: 2.75rem; }
+    .section-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; color: #6366f1; text-transform: uppercase; margin-bottom: 1.1rem; display: flex; align-items: center; gap: 10px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+    .about-text { font-size: 15px; line-height: 1.8; color: #94a3b8; }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .project-card { background: #131325; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 1.2rem; text-decoration: none; display: block; transition: border-color 0.2s, transform 0.15s; }
+    .project-card:hover { border-color: rgba(99,102,241,0.4); transform: translateY(-2px); }
+    .project-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 10px; }
+    .project-name { font-size: 15px; font-weight: 600; color: #e2e8f0; margin-bottom: 4px; }
+    .project-role { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600; }
+    .project-desc { font-size: 13px; color: #94a3b8; line-height: 1.55; margin-bottom: 10px; }
+    .project-link { font-size: 11px; color: #818cf8; }
+
+    .exp-card { background: #131325; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 1.4rem; margin-bottom: 1rem; transition: border-color 0.2s; }
+    .exp-card:hover { border-color: rgba(99,102,241,0.35); }
+    .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+    .exp-title { font-size: 15px; font-weight: 600; color: #e2e8f0; }
+    .exp-company { font-size: 13px; color: #818cf8; margin-top: 3px; text-decoration: none; }
+    .exp-company:hover { text-decoration: underline; }
+    .exp-date { font-size: 12px; color: #64748b; white-space: nowrap; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 3px 12px; border-radius: 20px; }
+    .exp-points { list-style: none; margin-top: 10px; }
+    .exp-points li { font-size: 14px; color: #94a3b8; line-height: 1.65; padding: 4px 0 4px 20px; position: relative; }
+    .exp-points li::before { content: '→'; position: absolute; left: 0; color: #6366f1; font-size: 12px; }
+
+    .ambassador-card { background: linear-gradient(135deg, rgba(99,102,241,0.09) 0%, rgba(16,185,129,0.06) 100%); border: 1px solid rgba(99,102,241,0.3); border-radius: 14px; padding: 1.4rem; margin-bottom: 1rem; }
+    .amb-badge { display: inline-block; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.35); color: #34d399; font-size: 11px; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; letter-spacing: 0.5px; }
+
+    .edu-card { background: #131325; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 1.4rem; margin-bottom: 1rem; }
+    .edu-title { font-size: 15px; font-weight: 600; color: #e2e8f0; }
+    .edu-sub { font-size: 13px; color: #818cf8; margin: 4px 0 12px; }
+    .edu-points { list-style: none; }
+    .edu-points li { font-size: 14px; color: #94a3b8; line-height: 1.65; padding: 3px 0 3px 20px; position: relative; }
+    .edu-points li::before { content: '◆'; position: absolute; left: 0; color: #6366f1; font-size: 8px; top: 8px; }
+
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #94a3b8; font-size: 13px; padding: 6px 16px; border-radius: 20px; }
+    .skill-tag.highlight { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.35); color: #a5b4fc; }
+
+    footer { text-align: center; padding: 2rem 1rem; font-size: 12px; color: #475569; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 22px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .exp-header { flex-direction: column; }
+      .exp-date { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="avatar-wrap">
+     <img src="foto.jpg" alt="Dani Alif">
+    </div>
+    </div>
+    <h1>DANI ALIF RISWANTO</h1>
+    <div class="title-badge">COMMUNITY MODERATOR &amp; WEB3 AMBASSADOR</div>
+    <div class="contact-row">
+      <span class="contact-pill">📍 Yogyakarta, Indonesia (UTC+7)</span>
+      <a href="tel:+6285930381846" class="contact-pill">📞 +62 859 3038 1846</a>
+      <a href="mailto:alifriswanto21@gmail.com" class="contact-pill">✉ alifriswanto21@gmail.com</a>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <div class="section">
+      <div class="section-label">About</div>
+      <p class="about-text">A dedicated Web3 professional with a proven track record in building and managing digital communities. With hands-on experience as a Community Moderator across multiple leading blockchain projects, I bring expertise in customer relations, critical thinking, and cross-cultural collaboration. My passion lies in creating inclusive, vibrant, and impactful community spaces — while continuously growing alongside the fast-evolving Web3 ecosystem.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Projects &amp; Affiliations</div>
+      <div class="projects-grid">
+        <a href="https://www.brkt.gg/" target="_blank" class="project-card">
+          <div class="project-icon" style="background: rgba(239,68,68,0.12);">🎯</div>
+          <div class="project-name">BRKT.gg</div>
+          <div class="project-role" style="color: #f87171;">COMMUNITY MODERATOR</div>
+          <div class="project-desc">On-chain prediction market built on Movement Network. A gamified ecosystem for competitive, decentralized forecasting.</div>
+          <div class="project-link">brkt.gg ↗</div>
+        </a>
+        <a href="https://www.nexio.xyz/" target="_blank" class="project-card">
+          <div class="project-icon" style="background: rgba(234,179,8,0.12);">₿</div>
+          <div class="project-name">Nexio</div>
+          <div class="project-role" style="color: #facc15;">COMMUNITY MODERATOR (LOCAL)</div>
+          <div class="project-desc">Institutional Bitcoin credit infrastructure offering fixed-rate BTC funding for borrowers and auditable yield for lenders.</div>
+          <div class="project-link">nexio.xyz ↗</div>
+        </a>
+        <a href="https://www.movementnetwork.xyz/" target="_blank" class="project-card">
+          <div class="project-icon" style="background: rgba(99,102,241,0.12);">⚡</div>
+          <div class="project-name">Movement Network</div>
+          <div class="project-role" style="color: #a5b4fc;">PATHFINDER ACADEMY GRADUATE</div>
+          <div class="project-desc">Layer 1 blockchain built on MoveVM — designed for the next generation of secure, scalable decentralized applications.</div>
+          <div class="project-link">movementnetwork.xyz ↗</div>
+        </a>
+        <a href="https://app.doma.xyz/" target="_blank" class="project-card">
+          <div class="project-icon" style="background: rgba(16,185,129,0.12);">🌐</div>
+          <div class="project-name">Doma.xyz</div>
+          <div class="project-role" style="color: #34d399;">COMMUNITY AMBASSADOR</div>
+          <div class="project-desc">Web3 platform bringing the internet onchain — enabling domain tokenization, ENS-native mapping, and instant on-chain trading.</div>
+          <div class="project-link">app.doma.xyz ↗</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Experience</div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Community Moderator</div>
+            <a href="https://www.brkt.gg/" target="_blank" class="exp-company">BRKT.gg</a>
+          </div>
+          <div class="exp-date">2024 – 2025</div>
+        </div>
+        <ul class="exp-points">
+          <li>Delivered responsive, high-quality community support — ensuring every member inquiry was addressed promptly and professionally.</li>
+          <li>Collaborated with the moderation team to design and execute engaging events, campaigns, and programs that strengthened the community ecosystem.</li>
+          <li>Initiated and led weekly quiz programs on Discord, significantly boosting member engagement and expanding community knowledge.</li>
+          <li>Fostered a positive culture by encouraging active participation and recognizing valuable member contributions.</li>
+          <li>Thoroughly reviewed member submissions to ensure compliance with community guidelines and maintain a high standard of quality.</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">Community Moderator (Local)</div>
+            <a href="https://www.nexio.xyz/" target="_blank" class="exp-company">Nexio</a>
+          </div>
+          <div class="exp-date">2024 – 2025</div>
+        </div>
+        <ul class="exp-points">
+          <li>Managed and grew the Indonesian local community, ensuring sustainable growth and a dynamic atmosphere across all platforms.</li>
+          <li>Handled full localization of all content into Bahasa Indonesia, bridging communication gaps and fostering cultural inclusion for local members.</li>
+          <li>Coordinated closely with fellow ambassadors and moderators on Telegram and Discord, amplifying community reach across platforms.</li>
+          <li>Gathered and analyzed community feedback to ensure the team's direction aligned with evolving member needs and expectations.</li>
+        </ul>
+      </div>
+      <div class="ambassador-card">
+        <div class="exp-header">
+          <div>
+            <div class="amb-badge">AMBASSADOR</div>
+            <div class="exp-title">Community Ambassador</div>
+            <a href="https://app.doma.xyz/" target="_blank" class="exp-company">Doma.xyz — The Internet is now Onchain</a>
+          </div>
+          <div class="exp-date">2024 – Present</div>
+        </div>
+        <ul class="exp-points">
+          <li>Serve as the face and voice of Doma Protocol within the local community — a platform enabling internet domains to be tokenized and traded onchain.</li>
+          <li>Educate community members on domain tokenization, ENS-native mapping, and the opportunities unlocked by Doma Protocol.</li>
+          <li>Assist in onboarding new users, addressing questions around domain tokens, sub-domain staking, and instant asset swaps.</li>
+          <li>Act as a bridge between the Doma core team and the Indonesian community, regularly surfacing local insights to inform strategy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Education &amp; Training</div>
+      <div class="edu-card">
+        <div class="edu-title">Graduate — Pathfinder Academy</div>
+        <div class="edu-sub">Movement Industry · 2024</div>
+        <ul class="edu-points">
+          <li>In-depth training in community building: onboarding strategies, event organization, discussion facilitation, and inclusive environment creation.</li>
+          <li>Mastered Discord moderation from foundational to advanced: channel setup, bot usage, balanced rule enforcement, and early spam/troll detection.</li>
+          <li>Comprehensive Web3 context: blockchain culture, community security best practices, and bridging language and cultural gaps globally.</li>
+          <li>Practiced handling critical situations via role-play: conflicts, misinformation, toxicity, scam reports, and pump/dump discussions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Skills</div>
+      <div class="skills-grid">
+        <span class="skill-tag highlight">Community Building</span>
+        <span class="skill-tag highlight">Discord Moderation</span>
+        <span class="skill-tag highlight">Telegram Management</span>
+        <span class="skill-tag highlight">Web3 &amp; Blockchain</span>
+        <span class="skill-tag highlight">Ambassador Programs</span>
+        <span class="skill-tag">Content Localization (ID/EN)</span>
+        <span class="skill-tag">Event Planning</span>
+        <span class="skill-tag">Conflict Resolution</span>
+        <span class="skill-tag">Feedback Analysis</span>
+        <span class="skill-tag">Customer Relations</span>
+        <span class="skill-tag">Cross-cultural Communication</span>
+        <span class="skill-tag">Bot Management</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>Dani Alif Riswanto · Community Moderator &amp; Web3 Ambassador · Yogyakarta, Indonesia</footer>
+
+</body>
+</html>
